@@ -9,7 +9,6 @@
 
 
     <TextView
-
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -17,7 +16,6 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="40dp"
-        android:autoText="false"
         android:hint="text"
         android:textAlignment="textEnd"
         android:textSize="60dp" />
@@ -28,44 +26,117 @@
         android:layout_below="@+id/textView">
 
         <Button
+            android:id="@+id/clearField"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/shape"
+            android:text="C" />
+        <Button
+            android:id="@+id/changeAction"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_toEndOf="@id/clearField"
+            android:text="+/-"
+            android:background="@drawable/shape"
+            android:textSize="20sp"/>
+        <Button
+            android:id="@+id/percent"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="%"
+            android:background="@drawable/shape"
+            android:layout_toEndOf="@id/changeAction"
+            android:textSize="20sp"/>
+        <Button
+            android:id="@+id/division"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="/"
+            android:background="@drawable/shape"
+            android:layout_toEndOf="@id/percent"
+            />
+
+        <Button
+            android:id="@+id/multiplication"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="*"
+            android:textSize="20sp"
+            android:background="@drawable/shape"
+            android:layout_toEndOf="@id/buttonThree"
+            android:layout_below="@id/percent"/>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/plus"
+            android:text="+"
+            android:textSize="20sp"
+            android:background="@drawable/shape"
+            android:layout_toEndOf="@id/buttonSix"
+            android:layout_below="@id/multiplication"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/minus"
+            android:text="-"
+            android:textSize="20sp"
+            android:background="@drawable/shape"
+            android:layout_toEndOf="@id/buttonNine"
+            android:layout_below="@id/plus"/>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/equal"
+            android:text="="
+            android:textSize="20sp"
+            android:background="@drawable/shape"
+            android:layout_toEndOf="@id/buttonDot"
+            android:layout_below="@id/minus"/>
+
+        <Button
             android:id="@+id/buttonOne"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_margin="10dp"
             android:text="@string/_1"
+            android:background="@drawable/shape_main_buttons"
+            android:layout_below="@id/clearField"
+
              />
 
         <Button
             android:id="@+id/buttonTwo"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_margin="10dp"
             android:text="2"
-            android:layout_toEndOf="@id/buttonOne"/>
+            android:background="@drawable/shape_main_buttons"
+            android:layout_toEndOf="@id/buttonOne"
+            android:layout_below="@id/clearField"/>
 
         <Button
             android:id="@+id/buttonThree"
             android:text="3"
+            android:background="@drawable/shape_main_buttons"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_margin="10dp"
             android:layout_toEndOf="@id/buttonTwo"
+            android:layout_below="@id/clearField"
             />
 
         <Button
             android:id="@+id/buttonFour"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_margin="10dp"
             android:layout_below="@id/buttonOne"
-            android:text="4" />
+            android:text="4"
+            android:background="@drawable/shape_main_buttons"/>
 
         <Button
             android:id="@+id/buttonFive"
             android:text="5"
+            android:background="@drawable/shape_main_buttons"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_margin="10dp"
             android:layout_below="@id/buttonTwo"
             android:layout_toEndOf="@id/buttonFour"/>
 
@@ -74,53 +145,52 @@
             android:layout_toEndOf="@id/buttonFive"
             android:layout_below="@id/buttonThree"
             android:text="6"
+            android:background="@drawable/shape_main_buttons"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_margin="10dp"
             />
 
         <Button
             android:id="@+id/buttonSeven"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_margin="10dp"
             android:layout_below="@id/buttonFour"
-            android:text="7" />
+            android:text="7"
+            android:background="@drawable/shape_main_buttons"/>
 
         <Button
             android:id="@+id/buttonEight"
             android:text="8"
+            android:background="@drawable/shape_main_buttons"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_margin="10dp"
             android:layout_below="@id/buttonFive"
             android:layout_toEndOf="@id/buttonSeven"/>
 
         <Button
             android:id="@+id/buttonNine"
             android:text="9"
+            android:background="@drawable/shape_main_buttons"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_margin="10dp"
             android:layout_below="@id/buttonSix"
             android:layout_toEndOf="@id/buttonEight"/>
 
         <Button
             android:id="@+id/buttonNull"
-            android:layout_width="220dp"
+            android:layout_width="200dp"
             android:layout_height="100dp"
-            android:layout_margin="10dp"
             android:text="0"
+            android:background="@drawable/shape_main_buttons"
             android:layout_below="@id/buttonSeven"
-
             />
 
         <Button
             android:id="@+id/buttonDot"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_margin="10dp"
             android:text=","
+            android:background="@drawable/shape_main_buttons"
             android:layout_below="@id/buttonNine"
             android:layout_toEndOf="@id/buttonNull"
             />
