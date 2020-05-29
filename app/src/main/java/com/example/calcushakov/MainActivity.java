@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FrameLayout engMode;
 
 
+
     private Float Value1;
     private Float Value2;
 
@@ -45,38 +47,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
         setContentView(R.layout.activity_main);
+
+
 
         init();
     }
 
     private void init() {
-        buttonOne = findViewById(R.id.buttonOne);
+        buttonOne = findViewById(R.id.engButtonOne);
         buttonOne.setOnClickListener(this);
-        buttonTwo = findViewById(R.id.buttonTwo);
+        buttonTwo = findViewById(R.id.engButtonTwo);
         buttonTwo.setOnClickListener(this);
-        buttonThree = findViewById(R.id.buttonThree);
+        buttonThree = findViewById(R.id.engButtonThree);
         buttonThree.setOnClickListener(this);
-        buttonFour = findViewById(R.id.buttonFour);
+        buttonFour = findViewById(R.id.engButtonFour);
         buttonFour.setOnClickListener(this);
-        buttonFive = findViewById(R.id.buttonFive);
+        buttonFive = findViewById(R.id.engButtonFive);
         buttonFive.setOnClickListener(this);
-        buttonSix = findViewById(R.id.buttonSix);
+        buttonSix = findViewById(R.id.engButtonSix);
         buttonSix.setOnClickListener(this);
-        buttonSeven = findViewById(R.id.buttonSeven);
+        buttonSeven = findViewById(R.id.engButtonSeven);
         buttonSeven.setOnClickListener(this);
-        buttonEight = findViewById(R.id.buttonEight);
+        buttonEight = findViewById(R.id.engButtonEight);
         buttonEight.setOnClickListener(this);
-        buttonNine = findViewById(R.id.buttonNine);
+        buttonNine = findViewById(R.id.engButtonNine);
         buttonNine.setOnClickListener(this);
-        buttonDot = findViewById(R.id.buttonDot);
+        buttonDot = findViewById(R.id.engButtonDot);
         buttonDot.setOnClickListener(this);
-        buttonNull = findViewById(R.id.buttonNull);
+        buttonNull = findViewById(R.id.engButtonNull);
         buttonNull.setOnClickListener(this);
-        clearField = findViewById(R.id.clearField);
+        clearField = findViewById(R.id.engClearField);
         clearField.setOnClickListener(this);
-        changeAction = findViewById(R.id.changeAction);
-        changeAction.setOnClickListener(this);
         percent = findViewById(R.id.percent);
         division = findViewById(R.id.division);
         multiplication = findViewById(R.id.multiplication);
@@ -87,90 +95,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         basicMode = findViewById(R.id.basicMode);
         engMode = findViewById(R.id.engineeringMode);
         switchMode = findViewById(R.id.switchMode);
-
-        switchMode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(basicMode.getVisibility() == View.VISIBLE){
-                    basicMode.setVisibility(View.GONE);
-                    engMode.setVisibility(View.VISIBLE);
-                } else {
-                    basicMode.setVisibility(View.VISIBLE);
-                    engMode.setVisibility(View.GONE);
-                }
-            }
-        });
-
-        equal.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onClick(View v) {
-                Value2 = Float.parseFloat(textView.getText() + "");
-
-                if (plusBool) {
-                    textView.setText(Value1 + Value2 + "");
-                    plusBool = false;
-                } else if (minusBool) {
-                    textView.setText(Value1-Value2+"");
-                    minusBool = false;
-                } else if (percentBool) {
-                    textView.setText(":(");
-                    percentBool = false;
-                } else if (divisionBool) {
-                    textView.setText(Value1/Value2+"");
-                    divisionBool = false;
-                } else if (multiplicationBool) {
-                    textView.setText(Value1*Value2+"");
-                    multiplicationBool = false;
-                }
-
-
-
-            }
-        });
-
-        plus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Value1 = Float.parseFloat(textView.getText() + "");
-                plusBool = true;
-                textView.setText("");
-            }
-        });
-
-        minus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Value1 = Float.parseFloat(textView.getText() + "");
-                minusBool = true;
-                textView.setText("");
-            }
-        });
-
-        division.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Value1 = Float.parseFloat(textView.getText() + "");
-                divisionBool = true;
-                textView.setText("");
-            }
-        });
-
-        multiplication.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Value1 = Float.parseFloat(textView.getText() + "");
-                multiplicationBool = true;
-                textView.setText("");
-            }
-        });
-
-        percent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                textView.setText("Не работает");
-            }
-        });
 
 
     }
