@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -29,6 +31,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button minus;
     private Button equal;
     private TextView textView;
+    private Button switchMode;
+    private FrameLayout basicMode;
+    private FrameLayout engMode;
 
 
     private Float Value1;
@@ -79,6 +84,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         minus = findViewById(R.id.minus);
         equal = findViewById(R.id.equal);
         textView = findViewById(R.id.textView);
+        basicMode = findViewById(R.id.basicMode);
+        engMode = findViewById(R.id.engineeringMode);
+        switchMode = findViewById(R.id.switchMode);
+
+        switchMode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(basicMode.getVisibility() == View.VISIBLE){
+                    basicMode.setVisibility(View.GONE);
+                    engMode.setVisibility(View.VISIBLE);
+                } else {
+                    basicMode.setVisibility(View.VISIBLE);
+                    engMode.setVisibility(View.GONE);
+                }
+            }
+        });
 
         equal.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
